@@ -1,0 +1,9 @@
+<h1>제목 : {{thepost.title}}</h1>
+<br>
+<h2>내용 : </h2>
+<h3>{{thepost.content}}</h3>
+<h3>{{thepost.created_at}}</h3>
+
+<a href="{% url 'delete' thepost.id %}">삭제</a>
+<a href="{% url 'edit' thepost.id %}">수정</a>
+<a href="{% url 'home' %}">홈으로</a>

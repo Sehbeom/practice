@@ -1,0 +1,12 @@
+<form action="{% url 'update' thepost.id %}" method="POST">
+    {% csrf_token %}
+    <div>
+        <label for='title'>제목</label>
+        <input type='text' value='{{thepost.title}}' name='title' id='title'>
+    </div>
+    <div>
+        <label for='content'>내용</label>
+        <textarea name='content' id='content'>{{thepost.content}}</textarea>
+    </div>
+    <button type='submit'>수정</button>
+</form>

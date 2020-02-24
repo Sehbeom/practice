@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+HOME
+<a href="{% url 'new' %}">new</a>
+
+{% block layoutblock %}
+
+<form action="{% url 'search' %}" method="POST">
+    {% csrf_token %}
+    <ul>
+        <li>
+            <input type="text" name="word" id="word" value=''>
+        </li>
+        <li>
+            <input type="submit" value="검색">
+        </li>
+    </ul>
+</form>
+
+{% for post in posts %}
+<h1><a href="{% url 'detail' post.id %}">{{post.title}}</a></h1>
+
+{% endfor %}
+
+{% endblock %}
